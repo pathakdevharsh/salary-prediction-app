@@ -1,11 +1,12 @@
 
 import streamlit as st
 import pandas as pd
-import joblib
+import pickle
 import json
 
 # Load model
-model = joblib.load("salary_model.pkl")
+with open("salary_model.pkl", "rb") as f:
+    model = pickle.load(f)
 
 # Load options
 with open("options.json", "r") as f:
